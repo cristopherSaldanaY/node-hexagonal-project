@@ -1,0 +1,16 @@
+root = true # directorio raíz donde se va a resolver el editorConfig7
+
+#las reglas se definen entre corchetes []
+#el * dice que se aplicara para todos los archivos la misma regla
+
+[*] 
+
+indent_style = tab #especificas como vas a gestionar la identación
+indent_size = 3 #especificas cuantos espacios te vas a mover con una identación
+end_of_line = lf #detecta el final de cada linea
+trim_trailing_whitespace = true #para limpiar espacios en blanco 
+insert_final_newline = true #inserta una linea al final de codigo
+charset = utf-8 #especifica la estandarizacion de caracteres
+
+[*.md] #realizas una especificacion para edicion para unas ciertas extensiones
+indent_size = 4

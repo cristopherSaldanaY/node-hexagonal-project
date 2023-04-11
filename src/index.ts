@@ -1,8 +1,12 @@
 interface Teacher {
-    name: string
+  name: string
 }
 
+const teacher: Teacher = { name: 'Cristopher' }
 
-const teacher: Teacher = { name: 'Teacher'};
+console.log(teacher)
 
-console.log(teacher);
+/* Para formatear la especificacion del prettier
+
+    Shift + alt +f
+*/

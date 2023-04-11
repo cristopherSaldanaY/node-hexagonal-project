@@ -1,5 +1,19 @@
 {
   "compilerOptions": {
-    
-  }
+    "module": "CommonJS" /* permite que al procesar el codigo de TS luego de compilar/transpilar se pase a JS */,
+    "esModuleInterop": true /* permite tener compatibilidad con otras extensiones de otros lenguajes y modulos del mismo entorno */,
+    "resolveJsonModule": true /* Me permite darle soporte al codigo en la importación de  archivos Json */,
+    /*"moduleResolution": "classic", por defecto le daras la responsabilidad al proyecto que tenga soporte absoluto a typescript */
+    "moduleResolution": "node" /* permite darle soporte absoluto a TypeScript */,
+    "target": "ES2020" /* Me permite especificar la estandarizacion del ECMMAScript para mi proyecto */,
+    "noImplicitAny": true /*  Me permite definir que no me recomiende tipar con tips any por default*/,
+    "sourceMap": true /* me permite crear un archivo JS raiz indetificador para cada archivo generado a partir de un TS  */,
+    "experimentalDecorators": true /* Me permite darle soporte a mi proyecto para trabajar con decoradores  */,
+    "emitDecoratorMetadata": true /* me permite que la data que generen los decoradores persistan en tiempo de ejecución */,
+    "strict": true /* Monitorea los archivos y verificar que tenga una programación estricta, identifica definiciones erroneas   */,
+    "baseUrl": "./" /* me permite definir donde alojare mi directorio que tiene el codigo de producción */,
+    "outDir": "./build" /* Este es el directorio con mi codigo JS para Producción */
+  },
+  "exclude": ["node_modules"] /* Me permite decir que voy a ignorar cuando compile  */,
+  "include": ["src/**/*.ts"] /* Me perm ite definir donde se va a encontrar mi codigo a compilar/transpilar*/
 }
