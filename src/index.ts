@@ -1,12 +1,22 @@
-interface Teacher {
-  name: string
-}
+import ServerBootstrap from './bootstrap/server.bootstrap' //
+import { Bootstrap } from './bootstrap/base.bootstrap' // clase padre para tipar los datos
+import Application from './app' //aplicación
 
-const teacher: Teacher = { name: 'Cristopher' }
+/* de tipo Bootstrap, nueva instancia de ServerBootstrap y pasamos la aplicacion */
+const serverBootstrap: Bootstrap = new ServerBootstrap(Application)
 
-console.log(teacher)
-
-/* Para formatear la especificacion del prettier
-
-    Shift + alt +f
+/*
+	Para resolver una promesa
+	1- try catch => Async await
+	2- then catch
 */
+
+//funcion auto invocada
+;(async () => {
+	try {
+		const resultServer = await serverBootstrap.initialize()
+		console.log(resultServer)
+	} catch (error) {
+		console.log(error)
+	}
+})()
