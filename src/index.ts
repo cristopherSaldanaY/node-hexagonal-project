@@ -1,6 +1,6 @@
 import ServerBootstrap from './bootstrap/server.bootstrap' //
 import { Bootstrap } from './bootstrap/base.bootstrap' // clase padre para tipar los datos
-import Application from './app' //aplicación
+import Application from './app' //aplicació
 
 /* de tipo Bootstrap, nueva instancia de ServerBootstrap y pasamos la aplicacion */
 const serverBootstrap: Bootstrap = new ServerBootstrap(Application)
