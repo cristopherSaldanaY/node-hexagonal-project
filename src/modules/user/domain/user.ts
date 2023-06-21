@@ -1,5 +1,5 @@
 import { IEntity } from '../../shared/entity.interface'
-import { EmailVO } from './value-objects/email.VO'
+import { EmailVO } from './value-objects/email.vo'
 
 /* Estructura de datos */
 /* Principio solid: Interface Segregation */
@@ -16,15 +16,17 @@ interface UserOptional {
 	guid: string
 }
 
-interface UserUpdate {
+export interface UserUpdate {
 	name: string
 	lastname: string
 	password: string
 }
 
-export type UserProperties = Required<UserRequired> & Partial<UserOptional> /* no se pueden implementar, definicion de tipado solamente */
+export type UserProperties = Required<UserRequired> &
+	Partial<UserOptional> /* no se pueden implementar, definicion de tipado solamente */
 
-export default class User implements IEntity<UserProperties, UserUpdate> { /* definiciones de un usuario */
+export default class User implements IEntity<UserProperties, UserUpdate> {
+	/* definiciones de un usuario */
 	private name: string
 	private lastname: string
 	private readonly email: EmailVO /* readonly para que cuando se genere se pueda leer pero no modificar */
