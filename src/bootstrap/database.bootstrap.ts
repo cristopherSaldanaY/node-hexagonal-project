@@ -1,31 +1,31 @@
 import { DataSource } from 'typeorm'
 import { Bootstrap } from './base.bootstrap'
+import { UserEntity } from '../modules/user/infraestructure/user.entity'
 
 let appDataSource: DataSource
 
 export default class extends Bootstrap {
-	/* metodo abstracto heredado */
-	initialize(): Promise<DataSource> {
-		const AppDataSource = new DataSource({
-			/* configuracion de conexión */ type: 'mysql',
-			host: 'localhost',
-			port: 3308,
-			username: 'adminUser',
-			password: '12345',
-			database: 'bddnode',
-			synchronize: true,
-			logging: true,
-			entities: [],
-			migrations: [],
-			subscribers: [],
-		})
+  initialize(): Promise<DataSource> {
+    const AppDataSource = new DataSource({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3308,
+      username: 'adminUser',
+      password: '12345',
+      database: 'bddnode',
+      synchronize: true,
+      logging: true,
+      entities: [UserEntity],
+      migrations: [],
+      subscribers: [],
+    })
 
-		appDataSource = AppDataSource
+    appDataSource = AppDataSource
 
-		return AppDataSource.initialize()
-	}
+    return AppDataSource.initialize()
+  }
 
-	static get dataSource(): DataSource {
-		return appDataSource
-	}
+  static get dataSource(): DataSource {
+    return appDataSource
+  }
 }

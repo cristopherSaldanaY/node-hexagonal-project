@@ -2,27 +2,28 @@ import User, { UserUpdate } from '../domain/user'
 import { UserRepository } from '../domain/user.repository'
 
 export default class UserApplication {
-	/* SOLID PRINCIPLE: Dependency Inversion */
-	/* DESIGN PATTERN: Injection dependency: https://desarrolloweb.com/articulos/patron-diseno-contenedor-dependencias.html */
-	constructor(private readonly userRepository: UserRepository) {}
 
-	insert(user: User) {
-		return this.userRepository.insert(user)
-	}
+  // Solid Principle: Inversion Dependency
+  // Design Pattern Injection Dependency: https://desarrolloweb.com/articulos/patron-diseno-contenedor-dependencias.html
+  constructor(private readonly userRepository: UserRepository) {}
 
-	list() {
-		return this.userRepository.list()
-	}
+  insert(user: User) {
+    return this.userRepository.insert(user)
+  }
 
-	listOne(guid: string) {
-		return this.userRepository.listOne(guid)
-	}
+  list() {
+    return this.userRepository.list()
+  }
 
-	update(guid: string, user: Partial<UserUpdate>) {
-		return this.userRepository.update(guid, user)
-	}
+  listOne(guid: string) {
+    return this.userRepository.listOne(guid)
+  }
 
-	delete(guid: string) {
-		return this.userRepository.delete(guid)
-	}
+  update(guid: string, user: Partial<UserUpdate>) {
+    return this.userRepository.update(guid, user)
+  }
+
+  delete(guid: string) {
+    return this.userRepository.delete(guid)
+  }
 }
