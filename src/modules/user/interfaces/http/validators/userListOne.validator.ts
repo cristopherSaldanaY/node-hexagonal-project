@@ -8,3 +8,4 @@ export class UserListOneValidator {
   @MinLength(10, { message: 'Guid is too short' })
   guid: string
 }
+

@@ -28,8 +28,3 @@ class UserRouter {
 }
 
 export default new UserRouter().expressRouter
-
-// forma 2
-/*this.expressRouter.get('/list', (req: Request, res: Response) => {
-         controller.list(req, res)
-    })*/
