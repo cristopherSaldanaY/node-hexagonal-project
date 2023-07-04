@@ -12,6 +12,9 @@
     "quotes": ["error", "single"] /* si no es comilla simple lo toma como error */,
     "@typescript-eslint/no-explicit-any": ["warn"] /* si es hay tipos "any" los toma como warn */,
     "curly": "error" /* si hay definiciones faltantes con {} me tire error */,
-    "no-empty": "error" /* no se aceptan definiciones vacías */
+    "no-empty": "error" /* no se aceptan definiciones vacías */,
+	 "@typescript-eslint/no-var-requires": "off", /* para que el require de es5 no obligue usar var */
+	 "no-undef": "off" /* las importaciones no ocupadas no las deje undefined */
   }
 }
+

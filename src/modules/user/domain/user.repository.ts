@@ -1,6 +1,7 @@
 import { Result } from 'neverthrow'
 import { UserNotFoundException } from './exceptions/user.exception'
-import User, { UserUpdate } from './user'
+import User from './user'
+import { UserUpdate } from './interfaces/userUpdate.interface'
 
 export interface UserRepository {
   // Design Pattern Facade: https://refactoring.guru/design-patterns/facade
